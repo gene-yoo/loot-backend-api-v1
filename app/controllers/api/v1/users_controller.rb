@@ -1,5 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-
   def create
     user = User.new({username: user_params['username'], password: user_params['password'], password_confirmation: user_params['passwordConfirmation']})
 
@@ -10,7 +9,6 @@ class Api::V1::UsersController < ApplicationController
     else
       render json: { error: 'You might rethink yoself.', status: 422 }
     end
-
   end
 
   def update
