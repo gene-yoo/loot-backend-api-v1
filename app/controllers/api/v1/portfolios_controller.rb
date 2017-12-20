@@ -12,6 +12,6 @@ class Api::V1::PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:name, :description, initialCoins:[])
+    params.require(:portfolio).permit(:name, :description, :user_id, initialCoins: [])
   end
 end
