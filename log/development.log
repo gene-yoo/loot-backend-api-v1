@@ -948,3 +948,144 @@ Processing by Api::V1::AuthController#show as */*
 Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:04:40 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 49ms (Views: 9.4ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:06:18 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:06:56 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:07:23 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:07:56 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:08:08 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:08:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.09ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:08:31 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:08:36 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 01:09:01 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 01:29:51 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.95ms)
+Completed 200 OK in 105ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (166.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "loot-backend-api_development"[0m
+  [1m[35m (173.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "loot-backend-api_test"[0m
+  [1m[35m (543.2ms)[0m  [1m[35mCREATE DATABASE "loot-backend-api_development" ENCODING = 'unicode'[0m
+  [1m[35m (371.6ms)[0m  [1m[35mCREATE DATABASE "loot-backend-api_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(221022224779759725)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171219152429)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152429"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolios (20171219152542)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "name" character varying, "description" character varying, "balance" decimal, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2abc71c887"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_portfolios_on_user_id" ON "portfolios"  ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152542"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCoins (20171219152636)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "coins" ("id" bigserial primary key, "name" character varying, "symbol" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152636"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolioCoins (20171219153157)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "portfolio_coins" ("id" bigserial primary key, "trans_price" decimal, "trans_type" character varying, "quantity" decimal, "paper_currency" character varying, "portfolio_id" bigint, "coin_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bf5a0258b9"
+FOREIGN KEY ("portfolio_id")
+  REFERENCES "portfolios" ("id")
+, CONSTRAINT "fk_rails_092050f5d5"
+FOREIGN KEY ("coin_id")
+  REFERENCES "coins" ("id")
+)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_portfolio_coins_on_portfolio_id" ON "portfolio_coins"  ("portfolio_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_portfolio_coins_on_coin_id" ON "portfolio_coins"  ("coin_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219153157"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-20 06:35:17.070339"], ["updated_at", "2017-12-20 06:35:17.070339"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(221022224779759725)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
