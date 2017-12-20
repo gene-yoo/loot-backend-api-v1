@@ -1,6 +1,5 @@
 class Api::V1::AuthController < ApplicationController
   def create
-    binding.pry
     user = User.find_by(username: auth_params[:username])
 
     if user && user.authenticate(auth_params[:password])
@@ -14,19 +13,11 @@ class Api::V1::AuthController < ApplicationController
   def show
     token = request.headers['token']
     decoded = JWT.decode(token, ENV['secret'], true, { algorithm: ENV['algo'] })
-    user = User.find_by(username: decoded[0]['username'])
+
+    user = User.find_by(id: decoded[0]['id'])
 
     if user
-      render json: user
-    else
-      render json: {error: 'You must be playing yoself ... '}, status: 401
-    end
-  end
-
-  def snake
-    user = User.find_by(username: params[:username])
-    if user
-      render json: user
+      render json: { token: token, id: user.id, username: user.username }
     else
       render json: {error: 'You must be playing yoself ... '}, status: 401
     end
