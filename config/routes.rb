@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :update, :delete]
+      resources :portfolios, only: [:create, :update, :delete]
 
       post '/signup', to: 'users#create', as: 'create_new_user'
       post '/login', to: 'auth#create', as: 'new_session'

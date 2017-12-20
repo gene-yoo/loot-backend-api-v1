@@ -1089,3 +1089,228 @@ FOREIGN KEY ("coin_id")
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(221022224779759725)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 08:59:55 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 401 Unauthorized in 34ms (Views: 6.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 09:01:06 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/api/v1/auth_controller.rb:15:in `show'
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 09:02:32 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 25ms (Views: 1.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-20 09:02:47 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/geneyoo/.rvm/gems/ruby-2.3.5/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/geneyoo/.rvm/gems/ruby-2.3.5/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (5.9ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-12-20 09:02:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 09:06:08 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/api/v1/auth_controller.rb:15:in `show'
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 09:07:18 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 43ms (Views: 8.7ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 09:07:38 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 5ms (Views: 0.7ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (169.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "loot-backend-api_development"[0m
+  [1m[35m (165.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "loot-backend-api_test"[0m
+  [1m[35m (574.2ms)[0m  [1m[35mCREATE DATABASE "loot-backend-api_development" ENCODING = 'unicode'[0m
+  [1m[35m (421.9ms)[0m  [1m[35mCREATE DATABASE "loot-backend-api_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(221022224779759725)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171219152429)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152429"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolios (20171219152542)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "name" character varying, "description" character varying, "balance" decimal, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2abc71c887"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_portfolios_on_user_id" ON "portfolios"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152542"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCoins (20171219152636)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "coins" ("id" bigserial primary key, "name" character varying, "symbol" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152636"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolioCoins (20171219153157)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "portfolio_coins" ("id" bigserial primary key, "trans_price" decimal, "trans_type" character varying, "quantity" decimal, "paper_currency" character varying, "portfolio_id" bigint, "coin_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bf5a0258b9"
+FOREIGN KEY ("portfolio_id")
+  REFERENCES "portfolios" ("id")
+, CONSTRAINT "fk_rails_092050f5d5"
+FOREIGN KEY ("coin_id")
+  REFERENCES "coins" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_portfolio_coins_on_portfolio_id" ON "portfolio_coins"  ("portfolio_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_portfolio_coins_on_coin_id" ON "portfolio_coins"  ("coin_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219153157"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-20 14:09:13.021246"], ["updated_at", "2017-12-20 14:09:13.021246"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(221022224779759725)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/signup" for 127.0.0.1 at 2017-12-20 09:09:35 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"gene", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "gene"], ["password_digest", "$2a$10$.zbRQ4EjTfvbDNAZs5zThuhIGoBN2LBCOfMLTCugDAFM52cg86WhW"], ["created_at", "2017-12-20 14:09:36.233283"], ["updated_at", "2017-12-20 14:09:36.233283"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 134ms (Views: 9.3ms | ActiveRecord: 17.6ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 09:09:47 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 116ms (Views: 0.9ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 09:09:54 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 5997ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 09:19:30 -0500
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-20 09:19:41 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 119ms (Views: 6.2ms | ActiveRecord: 0.9ms)
+
+
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (21.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 192ms (Views: 9.1ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 09:30:56 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 09:31:38 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 09:35:37 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 12:27:32 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"new port", "description"=>"new desc", "initialCoins"=>["BTC", "ETH", "XMR"]}}
+Completed 204 No Content in 27ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 12:28:11 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"new port", "description"=>"new desc", "initialCoins"=>["BTC", "ETH", "XMR"]}}
+Completed 204 No Content in 66162ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 12:29:28 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"hey", "description"=>"whats good", "initialCoins"=>["BTC", "XMR"]}}
+Completed 204 No Content in 11529ms (ActiveRecord: 0.0ms)
+
+

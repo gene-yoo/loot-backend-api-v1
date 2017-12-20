@@ -13,7 +13,6 @@ class Api::V1::AuthController < ApplicationController
   def show
     token = request.headers['token']
     decoded = JWT.decode(token, ENV['secret'], true, { algorithm: ENV['algo'] })
-
     user = User.find_by(id: decoded[0]['id'])
 
     if user
