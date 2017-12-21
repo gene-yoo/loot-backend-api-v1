@@ -4,22 +4,35 @@ class Portfolio < ApplicationRecord
   has_many :portfolio_coins
   has_many :coins, through: :portfolio_coins
 
-  def initialCoins=(coin_names)
-    coins = coin_names.map do |coin_name|
-      name, symbol = coin_name.split(' ')
-      symbol = symbol.gsub('(', '').gsub(')', '')
-      coin = Coin.find_by(symbol: symbol)
+  def initialCoins=(params)
+    coin_count = params.length
+    budget = 2000.00
+
+    params.map do |coinInfo|
+      coin = Coin.find_by(symbol: coinInfo[:coinSymbol])
       if coin
         coin
       else
-        Coin.create(name: name, symbol: symbol)
+        coin = Coin.create(name: coinInfo[:coinName], symbol: coinInfo[:coinSymbol])
       end
+
+      quantity = (budget / coin_count) / coinInfo[:coinPrice]
+
+      PortfolioCoin.create(trans_price: coinInfo[:coinPrice], trans_type: 'buy', quantity: quantity, paper_currency: 'USD', portfolio_id: self.id, coin_id: coin.id)
     end
-
   end
 
-  def initialCoins
-    self.coins
+  def transactions
+    self.portfolio_coins.map do |transaction|
+      binding.pry
+      {
+        id: transaction.id,
+        trans_price: transaction.trans_price,
+        trans_type: transaction.trans_type,
+        quantity: transaction.quantity,
+        paper_currency: transaction.paper_currency,
+        coin_symbol: Coin.find_by(id: transaction.coin_id).symbol
+      }
+    end
   end
-
 end

@@ -1,3 +1,3 @@
 class PortfolioSerializer < ActiveModel::Serializer
-  attributes :id, :name. :description
+  attributes :id, :name, :description, :transactions
 end
