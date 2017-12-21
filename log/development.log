@@ -1802,3 +1802,104 @@ FOREIGN KEY ("coin_id")
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(221022224779759725)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 15:28:40 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 401 Unauthorized in 86ms (Views: 12.0ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 15:54:09 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"aaaaaaaaa", "description"=>"bbbbbbbb", "initialCoins"=>["Bitcoin (BTC)", "Monero (XMR)", "Nxt (NXT)"]}}
+  [1m[36mCoin Load (1.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BTC"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bitcoin"], ["symbol", "BTC"], ["created_at", "2017-12-20 20:54:40.838724"], ["updated_at", "2017-12-20 20:54:40.838724"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "XMR"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Monero"], ["symbol", "XMR"], ["created_at", "2017-12-20 20:54:40.844843"], ["updated_at", "2017-12-20 20:54:40.844843"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "NXT"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nxt"], ["symbol", "NXT"], ["created_at", "2017-12-20 20:54:40.849520"], ["updated_at", "2017-12-20 20:54:40.849520"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT "coins".* FROM "coins"[0m
+  [1m[36mPortfolioCoin Load (9.4ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins"[0m
+Completed 204 No Content in 200762ms (ActiveRecord: 59.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 15:57:38 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 401 Unauthorized in 6ms (Views: 1.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 15:57:47 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"asdfadsfasdfadsf", "description"=>"asdfasdfdsfdsfsfsdfasdfasdfasdf", "initialCoins"=>["Bitcoin (BTC)", "Monero (XMR)"]}}
+Started POST "/api/v1/signup" for 127.0.0.1 at 2017-12-20 15:58:06 -0500
+Completed 204 No Content in 28508ms (ActiveRecord: 0.0ms)
+
+
+Processing by Api::V1::UsersController#create as */*
+Started POST "/api/v1/signup" for 127.0.0.1 at 2017-12-20 15:58:16 -0500
+  Parameters: {"user"=>{"username"=>"gene", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"gene", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "gene"], ["password_digest", "$2a$10$R2dHjZ7jrlIPl2naT8CV6.3bafIHDMuHhW.pHLxHJ3hSVif8MMjYC"], ["created_at", "2017-12-20 20:58:16.461509"], ["updated_at", "2017-12-20 20:58:16.461509"]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "gene"], ["password_digest", "$2a$10$Adl2rCg8uRb12LvWz6AGcO9XDs8nHAFUlVBIKc6OhIxJDVE8wqn26"], ["created_at", "2017-12-20 20:58:16.463299"], ["updated_at", "2017-12-20 20:58:16.463299"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 197ms (Views: 1.3ms | ActiveRecord: 13.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 268ms (Views: 71.2ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 16:05:07 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"aaaaaa", "description"=>"bbbbb", "initialCoins"=>["Nxt (NXT)", "Bitshares (BTS)"], "user_id"=>2}}
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "NXT"], ["LIMIT", 1]]
+  [1m[36mCoin Load (1.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BTS"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bitshares"], ["symbol", "BTS"], ["created_at", "2017-12-20 21:05:27.588080"], ["updated_at", "2017-12-20 21:05:27.588080"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPortfolioCoin Load (1.6ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins"[0m
+Completed 204 No Content in 1035392ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-20 16:22:40 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 16:25:02 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"genenen", "description"=>"descdesc", "initialCoins"=>["Ethereum (ETH)", "DigitalCash (DASH)"], "user_id"=>""}}
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 16:25:42 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"geneasdf", "description"=>"asdfasdfsafasdfasfd", "initialCoins"=>["Bitcoin (BTC)", "Ethereum (ETH)"], "user_id"=>""}}
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-20 16:27:27 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"adaklfs", "description"=>"adfadsfasdfasdfasdf", "initialCoins"=>["Bitcoin (BTC)", "DigitalCash (DASH)"], "user_id"=>""}}
+Completed 204 No Content in 14131157ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 14241774ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 14283680ms (ActiveRecord: 0.0ms)
+
+
