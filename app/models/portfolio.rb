@@ -16,7 +16,6 @@ class Portfolio < ApplicationRecord
       end
     end
 
-
   end
 
   def initialCoins
