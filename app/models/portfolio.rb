@@ -24,9 +24,8 @@ class Portfolio < ApplicationRecord
 
   def transactions
     self.portfolio_coins.map do |transaction|
-      binding.pry
       {
-        id: transaction.id,
+        trans_id: transaction.id,
         trans_price: transaction.trans_price,
         trans_type: transaction.trans_type,
         quantity: transaction.quantity,

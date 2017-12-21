@@ -2839,3 +2839,5 @@ Processing by Api::V1::PortfoliosController#create as */*
 Completed 200 OK in 9423ms (Views: 6562.7ms | ActiveRecord: 66.0ms)
 
 
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]

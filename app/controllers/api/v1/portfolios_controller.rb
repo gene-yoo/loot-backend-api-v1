@@ -6,7 +6,6 @@ class Api::V1::PortfoliosController < ApplicationController
       portfolio.balance -= 2000
       portfolio.initialCoins = portfolio_params[:initialCoins]
       portfolio.save
-      binding.pry
       render json: portfolio
     else
       render json: {error: 'You must be playing yoself ... '}, status: 401
