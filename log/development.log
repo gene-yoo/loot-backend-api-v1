@@ -1974,3 +1974,150 @@ Processing by Api::V1::UsersController#create as */*
 Completed 200 OK in 143ms (Views: 8.0ms | ActiveRecord: 18.0ms)
 
 
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:02:24 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>["Bitcoin (BTC)", "Ethereum (ETH)", "Nxt (NXT)"], "user_id"=>1}}
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:02:30 -0500
+Completed 204 No Content in 627780ms (ActiveRecord: 0.0ms)
+
+
+Processing by Api::V1::AuthController#show as */*
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:12:52 -0500
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:12:52 -0500
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:12:52 -0500
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 34ms (Views: 1.0ms | ActiveRecord: 13.1ms)
+
+
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"5324", "Url"=>"/coins/etc/overview", "ImageUrl"=>"/media/20275/etc2.png", "Name"=>"ETC", "Symbol"=>"ETC", "CoinName"=>"Ethereum Classic", "FullName"=>"Ethereum Classic (ETC)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"N/A", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"7", "Sponsored"=>false}], "user_id"=>"", "initialPrices"=>[{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"BTC", "TOSYMBOL"=>"USD", "FLAGS"=>"1", "PRICE"=>15587.12, "LASTUPDATE"=>1513876327, "LASTVOLUME"=>0.36742016, "LASTVOLUMETO"=>5704.93282432, "LASTTRADEID"=>"135528053", "VOLUMEDAY"=>112139.76642816853, "VOLUMEDAYTO"=>1827017538.9341145, "VOLUME24HOUR"=>158324.7407093309, "VOLUME24HOURTO"=>2583984035.2010965, "OPENDAY"=>16461.97, "HIGHDAY"=>17301.83, "LOWDAY"=>15159.43, "OPEN24HOUR"=>16892.04, "HIGH24HOUR"=>17331.51, "LOW24HOUR"=>15072.48, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-1304.92, "CHANGEPCT24HOUR"=>-7.7250586666856105, "CHANGEDAY"=>-874.8500000000004, "CHANGEPCTDAY"=>-5.314370029832397, "SUPPLY"=>16755212, "MKTCAP"=>261165500069.44, "TOTALVOLUME24H"=>380205.6197808548, "TOTALVOLUME24HTO"=>6042467922.994429}}, {"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETH", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>785.45, "LASTUPDATE"=>1513876327, "LASTVOLUME"=>7.35991473, "LASTVOLUMETO"=>5856.1369523664, "LASTTRADEID"=>"22808485", "VOLUMEDAY"=>660664.1576946423, "VOLUMEDAYTO"=>534053464.1245641, "VOLUME24HOUR"=>864939.2954698299, "VOLUME24HOURTO"=>696100940.3626171, "OPENDAY"=>799.17, "HIGHDAY"=>840.55, "LOWDAY"=>762.02, "OPEN24HOUR"=>804.07, "HIGH24HOUR"=>845.01, "LOW24HOUR"=>756.49, "LASTMARKET"=>"Coinbase", "CHANGE24HOUR"=>-18.620000000000005, "CHANGEPCT24HOUR"=>-2.3157187807031727, "CHANGEDAY"=>-13.719999999999914, "CHANGEPCTDAY"=>-1.7167811604539605, "SUPPLY"=>96480876.5928, "MKTCAP"=>75780904519.81477, "TOTALVOLUME24H"=>2737329.4491070546, "TOTALVOLUME24HTO"=>2166769786.5369754}}, {"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETC", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>37.08, "LASTUPDATE"=>1513876316, "LASTVOLUME"=>0.5, "LASTVOLUMETO"=>18.61, "LASTTRADEID"=>"113529793", "VOLUMEDAY"=>1710440.4644590397, "VOLUMEDAYTO"=>67221593.27911283, "VOLUME24HOUR"=>2148771.8114083502, "VOLUME24HOURTO"=>84329670.9295941, "OPENDAY"=>38.93, "HIGHDAY"=>42.65, "LOWDAY"=>35.28, "OPEN24HOUR"=>39.03, "HIGH24HOUR"=>42.77, "LOW24HOUR"=>35.12, "LASTMARKET"=>"HitBTC", "CHANGE24HOUR"=>-1.9500000000000028, "CHANGEPCT24HOUR"=>-4.996156802459653, "CHANGEDAY"=>-1.8500000000000014, "CHANGEPCTDAY"=>-4.752119188286672, "SUPPLY"=>98535431, "MKTCAP"=>3653693781.48, "TOTALVOLUME24H"=>13065672.799610263, "TOTALVOLUME24HTO"=>489128359.572121}}]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 72ms (Views: 6.6ms | ActiveRecord: 33.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 73ms (Views: 1.4ms | ActiveRecord: 21.2ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:14:26 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"5324", "Url"=>"/coins/etc/overview", "ImageUrl"=>"/media/20275/etc2.png", "Name"=>"ETC", "Symbol"=>"ETC", "CoinName"=>"Ethereum Classic", "FullName"=>"Ethereum Classic (ETC)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"N/A", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"7", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"BTC", "TOSYMBOL"=>"USD", "FLAGS"=>"1", "PRICE"=>15587.12, "LASTUPDATE"=>1513876327, "LASTVOLUME"=>0.36742016, "LASTVOLUMETO"=>5704.93282432, "LASTTRADEID"=>"135528053", "VOLUMEDAY"=>112139.76642816853, "VOLUMEDAYTO"=>1827017538.9341145, "VOLUME24HOUR"=>158324.7407093309, "VOLUME24HOURTO"=>2583984035.2010965, "OPENDAY"=>16461.97, "HIGHDAY"=>17301.83, "LOWDAY"=>15159.43, "OPEN24HOUR"=>16892.04, "HIGH24HOUR"=>17331.51, "LOW24HOUR"=>15072.48, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-1304.92, "CHANGEPCT24HOUR"=>-7.7250586666856105, "CHANGEDAY"=>-874.8500000000004, "CHANGEPCTDAY"=>-5.314370029832397, "SUPPLY"=>16755212, "MKTCAP"=>261165500069.44, "TOTALVOLUME24H"=>380205.6197808548, "TOTALVOLUME24HTO"=>6042467922.994429}}, {"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETH", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>785.45, "LASTUPDATE"=>1513876327, "LASTVOLUME"=>7.35991473, "LASTVOLUMETO"=>5856.1369523664, "LASTTRADEID"=>"22808485", "VOLUMEDAY"=>660664.1576946423, "VOLUMEDAYTO"=>534053464.1245641, "VOLUME24HOUR"=>864939.2954698299, "VOLUME24HOURTO"=>696100940.3626171, "OPENDAY"=>799.17, "HIGHDAY"=>840.55, "LOWDAY"=>762.02, "OPEN24HOUR"=>804.07, "HIGH24HOUR"=>845.01, "LOW24HOUR"=>756.49, "LASTMARKET"=>"Coinbase", "CHANGE24HOUR"=>-18.620000000000005, "CHANGEPCT24HOUR"=>-2.3157187807031727, "CHANGEDAY"=>-13.719999999999914, "CHANGEPCTDAY"=>-1.7167811604539605, "SUPPLY"=>96480876.5928, "MKTCAP"=>75780904519.81477, "TOTALVOLUME24H"=>2737329.4491070546, "TOTALVOLUME24HTO"=>2166769786.5369754}}, {"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETC", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>37.08, "LASTUPDATE"=>1513876316, "LASTVOLUME"=>0.5, "LASTVOLUMETO"=>18.61, "LASTTRADEID"=>"113529793", "VOLUMEDAY"=>1710440.4644590397, "VOLUMEDAYTO"=>67221593.27911283, "VOLUME24HOUR"=>2148771.8114083502, "VOLUME24HOURTO"=>84329670.9295941, "OPENDAY"=>38.93, "HIGHDAY"=>42.65, "LOWDAY"=>35.28, "OPEN24HOUR"=>39.03, "HIGH24HOUR"=>42.77, "LOW24HOUR"=>35.12, "LASTMARKET"=>"HitBTC", "CHANGE24HOUR"=>-1.9500000000000028, "CHANGEPCT24HOUR"=>-4.996156802459653, "CHANGEDAY"=>-1.8500000000000014, "CHANGEPCTDAY"=>-4.752119188286672, "SUPPLY"=>98535431, "MKTCAP"=>3653693781.48, "TOTALVOLUME24H"=>13065672.799610263, "TOTALVOLUME24HTO"=>489128359.572121}}]}}
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:14:29 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:15:48 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"3808", "Url"=>"/coins/ltc/overview", "ImageUrl"=>"/media/19782/litecoin-logo.png", "Name"=>"LTC", "Symbol"=>"LTC", "CoinName"=>"Litecoin", "FullName"=>"Litecoin (LTC)", "Algorithm"=>"Scrypt", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"84000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"3", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"BTC"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"BTC", "TOSYMBOL"=>"USD", "FLAGS"=>"1", "PRICE"=>15471.57, "LASTUPDATE"=>1513876468, "LASTVOLUME"=>0.2263455, "LASTVOLUMETO"=>3484.1362815, "LASTTRADEID"=>"135531037", "VOLUMEDAY"=>112531.49386675887, "VOLUMEDAYTO"=>1833133378.3767197, "VOLUME24HOUR"=>158716.46814792155, "VOLUME24HOURTO"=>2590099874.6437, "OPENDAY"=>16461.97, "HIGHDAY"=>17301.83, "LOWDAY"=>15159.43, "OPEN24HOUR"=>16895.16, "HIGH24HOUR"=>17333.57, "LOW24HOUR"=>15073.59, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-1423.5900000000001, "CHANGEPCT24HOUR"=>-8.426022600555426, "CHANGEDAY"=>-990.4000000000015, "CHANGEPCTDAY"=>-6.016290881346531, "SUPPLY"=>16755212, "MKTCAP"=>259229435322.84, "TOTALVOLUME24H"=>381047.48632214905, "TOTALVOLUME24HTO"=>6029909785.497533}}}, {"ETH"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETH", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>783.74, "LASTUPDATE"=>1513876467, "LASTVOLUME"=>1.15528236, "LASTVOLUMETO"=>899.5952680848, "LASTTRADEID"=>"135530996", "VOLUMEDAY"=>663437.1606937125, "VOLUMEDAYTO"=>536232371.67996997, "VOLUME24HOUR"=>867712.2984688999, "VOLUME24HOURTO"=>698279847.9180233, "OPENDAY"=>799.17, "HIGHDAY"=>840.55, "LOWDAY"=>762.02, "OPEN24HOUR"=>804.22, "HIGH24HOUR"=>845.17, "LOW24HOUR"=>756.6, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-20.480000000000018, "CHANGEPCT24HOUR"=>-2.546566859814481, "CHANGEDAY"=>-15.42999999999995, "CHANGEPCTDAY"=>-1.9307531563997586, "SUPPLY"=>96480876.5928, "MKTCAP"=>75615922220.84108, "TOTALVOLUME24H"=>2743864.948362293, "TOTALVOLUME24HTO"=>2168695725.7454715}}}, {"LTC"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"LTC", "TOSYMBOL"=>"USD", "FLAGS"=>"2", "PRICE"=>297.7, "LASTUPDATE"=>1513876462, "LASTVOLUME"=>0.23459101, "LASTVOLUMETO"=>69.063593344, "LASTTRADEID"=>"135530853", "VOLUMEDAY"=>931013.1665948372, "VOLUMEDAYTO"=>288238556.12238765, "VOLUME24HOUR"=>1412670.4492969292, "VOLUME24HOURTO"=>436791259.3078461, "OPENDAY"=>304.81, "HIGHDAY"=>327.26, "LOWDAY"=>292.05, "OPEN24HOUR"=>317.3, "HIGH24HOUR"=>327.57, "LOW24HOUR"=>288.34, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-19.600000000000023, "CHANGEPCT24HOUR"=>-6.177119445319894, "CHANGEDAY"=>-7.110000000000014, "CHANGEPCTDAY"=>-2.332600636462063, "SUPPLY"=>54406983.1531371, "MKTCAP"=>16196958884.688915, "TOTALVOLUME24H"=>4011574.817579693, "TOTALVOLUME24HTO"=>1210485089.745625}}}]}}
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:15:49 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:16:20 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"3808", "Url"=>"/coins/ltc/overview", "ImageUrl"=>"/media/19782/litecoin-logo.png", "Name"=>"LTC", "Symbol"=>"LTC", "CoinName"=>"Litecoin", "FullName"=>"Litecoin (LTC)", "Algorithm"=>"Scrypt", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"84000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"3", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>["BTC"], "coinPrice"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"BTC", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>15408.32, "LASTUPDATE"=>1513876547, "LASTVOLUME"=>0.005, "LASTVOLUMETO"=>76.54, "LASTTRADEID"=>"135533587", "VOLUMEDAY"=>112778.63897303856, "VOLUMEDAYTO"=>1836964015.9694004, "VOLUME24HOUR"=>158963.6132542015, "VOLUME24HOURTO"=>2593930512.2363753, "OPENDAY"=>16461.97, "HIGHDAY"=>17301.83, "LOWDAY"=>15159.43, "OPEN24HOUR"=>16895.22, "HIGH24HOUR"=>17333.64, "LOW24HOUR"=>15073.71, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-1486.9000000000015, "CHANGEPCT24HOUR"=>-8.800714048115392, "CHANGEDAY"=>-1053.6500000000015, "CHANGEPCTDAY"=>-6.400509781028646, "SUPPLY"=>16755212, "MKTCAP"=>258169668163.84, "TOTALVOLUME24H"=>381705.1484773097, "TOTALVOLUME24HTO"=>6026003364.245297}}}, {"coinSymbol"=>["ETH"], "coinPrice"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETH", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>779.3, "LASTUPDATE"=>1513876545, "LASTVOLUME"=>8, "LASTVOLUMETO"=>6280, "LASTTRADEID"=>"2514100827", "VOLUMEDAY"=>665389.4339678144, "VOLUMEDAYTO"=>537757545.7648652, "VOLUME24HOUR"=>869664.5717430001, "VOLUME24HOURTO"=>699805022.0029176, "OPENDAY"=>799.17, "HIGHDAY"=>840.55, "LOWDAY"=>762.02, "OPEN24HOUR"=>804.22, "HIGH24HOUR"=>845.17, "LOW24HOUR"=>756.61, "LASTMARKET"=>"Gemini", "CHANGE24HOUR"=>-24.920000000000073, "CHANGEPCT24HOUR"=>-3.0986545970008295, "CHANGEDAY"=>-19.870000000000005, "CHANGEPCTDAY"=>-2.4863295669256864, "SUPPLY"=>96480876.5928, "MKTCAP"=>75187547128.76904, "TOTALVOLUME24H"=>2748324.849319973, "TOTALVOLUME24HTO"=>2163844976.3186526}}}, {"coinSymbol"=>["LTC"], "coinPrice"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"LTC", "TOSYMBOL"=>"USD", "FLAGS"=>"1", "PRICE"=>297.09, "LASTUPDATE"=>1513876542, "LASTVOLUME"=>0.08, "LASTVOLUMETO"=>23.459200000000003, "LASTTRADEID"=>"135533455", "VOLUMEDAY"=>933271.1747293981, "VOLUMEDAYTO"=>288911329.1677153, "VOLUME24HOUR"=>1414928.4574314891, "VOLUME24HOURTO"=>437464032.35317427, "OPENDAY"=>304.81, "HIGHDAY"=>327.26, "LOWDAY"=>292.05, "OPEN24HOUR"=>317.3, "HIGH24HOUR"=>327.57, "LOW24HOUR"=>288.35, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-20.210000000000036, "CHANGEPCT24HOUR"=>-6.36936653009771, "CHANGEDAY"=>-7.720000000000027, "CHANGEPCTDAY"=>-2.532725304287926, "SUPPLY"=>54406983.1531371, "MKTCAP"=>16163770624.9655, "TOTALVOLUME24H"=>4018886.3932217597, "TOTALVOLUME24HTO"=>1211073895.4971056}}}]}}
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:16:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:17:18 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"3808", "Url"=>"/coins/ltc/overview", "ImageUrl"=>"/media/19782/litecoin-logo.png", "Name"=>"LTC", "Symbol"=>"LTC", "CoinName"=>"Litecoin", "FullName"=>"Litecoin (LTC)", "Algorithm"=>"Scrypt", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"84000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"3", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>"BTC", "coinPrice"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"BTC", "TOSYMBOL"=>"USD", "FLAGS"=>"4", "PRICE"=>15386.76, "LASTUPDATE"=>1513876579, "LASTVOLUME"=>0.02481124, "LASTVOLUMETO"=>379.81046191999997, "LASTTRADEID"=>"135534409", "VOLUMEDAY"=>112871.93105052858, "VOLUMEDAYTO"=>1838409354.7086396, "VOLUME24HOUR"=>159056.90533169155, "VOLUME24HOURTO"=>2595375850.975615, "OPENDAY"=>16461.97, "HIGHDAY"=>17301.83, "LOWDAY"=>15159.43, "OPEN24HOUR"=>16895.24, "HIGH24HOUR"=>17333.68, "LOW24HOUR"=>15073.7, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-1508.4800000000014, "CHANGEPCT24HOUR"=>-8.928431913367323, "CHANGEDAY"=>-1075.210000000001, "CHANGEPCTDAY"=>-6.5314783103115905, "SUPPLY"=>16755212, "MKTCAP"=>257808425793.12, "TOTALVOLUME24H"=>381912.3422727599, "TOTALVOLUME24HTO"=>6024398973.882967}}}, {"coinSymbol"=>"ETH", "coinPrice"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"ETH", "TOSYMBOL"=>"USD", "FLAGS"=>"2", "PRICE"=>779.37, "LASTUPDATE"=>1513876575, "LASTVOLUME"=>0.13463958, "LASTVOLUMETO"=>106.2333214116, "LASTTRADEID"=>"22808978", "VOLUMEDAY"=>665824.3598634256, "VOLUMEDAYTO"=>538098631.50539, "VOLUME24HOUR"=>870099.49763861, "VOLUME24HOURTO"=>700146107.7434428, "OPENDAY"=>799.17, "HIGHDAY"=>840.55, "LOWDAY"=>762.02, "OPEN24HOUR"=>804.22, "HIGH24HOUR"=>845.17, "LOW24HOUR"=>756.62, "LASTMARKET"=>"Coinbase", "CHANGE24HOUR"=>-24.850000000000023, "CHANGEPCT24HOUR"=>-3.089950511054192, "CHANGEDAY"=>-19.799999999999955, "CHANGEPCTDAY"=>-2.477570479372343, "SUPPLY"=>96480876.5928, "MKTCAP"=>75194300790.13054, "TOTALVOLUME24H"=>2749498.057714754, "TOTALVOLUME24HTO"=>2164892963.509987}}}, {"coinSymbol"=>"LTC", "coinPrice"=>{"USD"=>{"TYPE"=>"5", "MARKET"=>"CCCAGG", "FROMSYMBOL"=>"LTC", "TOSYMBOL"=>"USD", "FLAGS"=>"2", "PRICE"=>296.76, "LASTUPDATE"=>1513876582, "LASTVOLUME"=>2.064963, "LASTVOLUMETO"=>603.91907898, "LASTTRADEID"=>"135534552", "VOLUMEDAY"=>935299.9255404273, "VOLUMEDAYTO"=>289511606.5032182, "VOLUME24HOUR"=>1416957.208242519, "VOLUME24HOURTO"=>438064309.68867654, "OPENDAY"=>304.81, "HIGHDAY"=>327.26, "LOWDAY"=>292.05, "OPEN24HOUR"=>317.3, "HIGH24HOUR"=>327.57, "LOW24HOUR"=>288.34, "LASTMARKET"=>"Bitfinex", "CHANGE24HOUR"=>-20.54000000000002, "CHANGEPCT24HOUR"=>-6.473369051370949, "CHANGEDAY"=>-8.050000000000011, "CHANGEPCTDAY"=>-2.6409894688494506, "SUPPLY"=>54406983.1531371, "MKTCAP"=>16145816320.524965, "TOTALVOLUME24H"=>4021106.2368196542, "TOTALVOLUME24HTO"=>1210871575.4092271}}}]}}
+Unpermitted parameters: :initialCoins, :initialPrices
+Completed 204 No Content in 482525ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:25:21 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:25:49 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"3808", "Url"=>"/coins/ltc/overview", "ImageUrl"=>"/media/19782/litecoin-logo.png", "Name"=>"LTC", "Symbol"=>"LTC", "CoinName"=>"Litecoin", "FullName"=>"Litecoin (LTC)", "Algorithm"=>"Scrypt", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"84000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"3", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>"BTC", "coinPrice"=>15478.93}, {"coinSymbol"=>"ETH", "coinPrice"=>784.89}, {"coinSymbol"=>"LTC", "coinPrice"=>297.94}]}}
+Completed 204 No Content in 3395ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:25:53 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:26:05 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"3808", "Url"=>"/coins/ltc/overview", "ImageUrl"=>"/media/19782/litecoin-logo.png", "Name"=>"LTC", "Symbol"=>"LTC", "CoinName"=>"Litecoin", "FullName"=>"Litecoin (LTC)", "Algorithm"=>"Scrypt", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"84000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"3", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>"BTC", "coinPrice"=>15502.64}, {"coinSymbol"=>"ETH", "coinPrice"=>785.7}, {"coinSymbol"=>"LTC", "coinPrice"=>298.36}]}}
+Completed 204 No Content in 4636ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 591351ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 624778ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 706854ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 793424ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:27:10 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, {"Id"=>"7605", "Url"=>"/coins/eth/overview", "ImageUrl"=>"/media/20646/eth_logo.png", "Name"=>"ETH", "Symbol"=>"ETH", "CoinName"=>"Ethereum", "FullName"=>"Ethereum (ETH)", "Algorithm"=>"Ethash", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"0", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"2", "Sponsored"=>false}, {"Id"=>"3808", "Url"=>"/coins/ltc/overview", "ImageUrl"=>"/media/19782/litecoin-logo.png", "Name"=>"LTC", "Symbol"=>"LTC", "CoinName"=>"Litecoin", "FullName"=>"Litecoin (LTC)", "Algorithm"=>"Scrypt", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"84000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"3", "Sponsored"=>false}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>"BTC", "coinPrice"=>15502.64}, {"coinSymbol"=>"ETH", "coinPrice"=>785.7}, {"coinSymbol"=>"LTC", "coinPrice"=>298.36}]}}
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:30:03 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:30:53 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"coinSymbol"=>"BTC", "coinName"=>"BTC"}, {"coinSymbol"=>"ETH", "coinName"=>"ETH"}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>"BTC", "coinPrice"=>15381.78}, {"coinSymbol"=>"ETH", "coinPrice"=>783.05}]}}
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-21 12:30:56 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-21 12:31:51 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test portfolio", "description"=>"test description", "initialCoins"=>[{"coinSymbol"=>"BTC", "coinName"=>"Bitcoin"}, {"coinSymbol"=>"ETH", "coinName"=>"Ethereum"}, {"coinSymbol"=>"LTC", "coinName"=>"Litecoin"}], "user_id"=>1, "initialPrices"=>[{"coinSymbol"=>"BTC", "coinPrice"=>15333.45}, {"coinSymbol"=>"ETH", "coinPrice"=>780.34}, {"coinSymbol"=>"LTC", "coinPrice"=>297.02}]}}
+Completed 204 No Content in 1872ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 60819ms (ActiveRecord: 0.0ms)
+
+
+Completed 204 No Content in 285435ms (ActiveRecord: 0.0ms)
+
+
