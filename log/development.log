@@ -2857,3 +2857,277 @@ Processing by Api::V1::AuthController#show as */*
 Completed 200 OK in 171ms (Views: 51.6ms | ActiveRecord: 52.9ms)
 
 
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (176.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "loot-backend-api_development"[0m
+  [1m[35m (164.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "loot-backend-api_test"[0m
+  [1m[35m (565.6ms)[0m  [1m[35mCREATE DATABASE "loot-backend-api_development" ENCODING = 'unicode'[0m
+  [1m[35m (364.5ms)[0m  [1m[35mCREATE DATABASE "loot-backend-api_test" ENCODING = 'unicode'[0m
+  [1m[35m (21.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(221022224779759725)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171219152429)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152429"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolios (20171219152542)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "name" character varying, "description" character varying, "balance" decimal DEFAULT 10000.0, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_2abc71c887"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_portfolios_on_user_id" ON "portfolios"  ("user_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152542"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCoins (20171219152636)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "coins" ("id" bigserial primary key, "name" character varying, "symbol" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219152636"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolioCoins (20171219153157)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "portfolio_coins" ("id" bigserial primary key, "trans_price" decimal, "trans_type" character varying, "quantity" decimal, "paper_currency" character varying, "portfolio_id" bigint, "coin_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bf5a0258b9"
+FOREIGN KEY ("portfolio_id")
+  REFERENCES "portfolios" ("id")
+, CONSTRAINT "fk_rails_092050f5d5"
+FOREIGN KEY ("coin_id")
+  REFERENCES "coins" ("id")
+)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_portfolio_coins_on_portfolio_id" ON "portfolio_coins"  ("portfolio_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_portfolio_coins_on_coin_id" ON "portfolio_coins"  ("coin_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171219153157"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-22 15:14:24.227132"], ["updated_at", "2017-12-22 15:14:24.227132"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(221022224779759725)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-22 10:15:43 -0500
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 401 Unauthorized in 96ms (Views: 14.1ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-22 10:15:54 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 401 Unauthorized in 36ms (Views: 1.5ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-22 10:16:22 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"Test Portfolio Name", "description"=>"Test Portfolio Description", "initialCoins"=>[{"coinSymbol"=>"BTC", "coinName"=>"Bitcoin", "coinPrice"=>12494.43}, {"coinSymbol"=>"ETH", "coinName"=>"Ethereum", "coinPrice"=>589.13}, {"coinSymbol"=>"LTC", "coinName"=>"Litecoin", "coinPrice"=>218.86}, {"coinSymbol"=>"NXT", "coinName"=>"Nxt", "coinPrice"=>1.08}]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 55ms (Views: 0.9ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-22 10:17:39 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test", "description"=>"testing testing", "initialCoins"=>[{"coinSymbol"=>"ETH", "coinName"=>"Ethereum", "coinPrice"=>593.26}, {"coinSymbol"=>"XMR", "coinName"=>"Monero", "coinPrice"=>282.9}]}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 10ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2017-12-22 10:18:27 -0500
+Started POST "/api/v1/signup" for 127.0.0.1 at 2017-12-22 10:18:37 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{"username"=>"gene", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "gene"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 16ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"gene", "password"=>"[FILTERED]", "passwordConfirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "gene"], ["password_digest", "$2a$10$goHmayubNiKJlo1nkn9w5Oh1awSLogjTkAFRmOfoeI3IaLxpMRESO"], ["created_at", "2017-12-22 15:18:37.899108"], ["updated_at", "2017-12-22 15:18:37.899108"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 157ms (Views: 8.6ms | ActiveRecord: 23.2ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-22 10:18:51 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"Test Portfolio Name", "description"=>"Test Portfolio Description", "initialCoins"=>[{"coinSymbol"=>"BTC", "coinName"=>"Bitcoin", "coinPrice"=>12633.69}, {"coinSymbol"=>"ETH", "coinName"=>"Ethereum", "coinPrice"=>596.4}, {"coinSymbol"=>"LTC", "coinName"=>"Litecoin", "coinPrice"=>226.84}, {"coinSymbol"=>"XMR", "coinName"=>"Monero", "coinPrice"=>285.18}], "user_id"=>1}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Test Portfolio Name"], ["description", "Test Portfolio Description"], ["user_id", 1], ["created_at", "2017-12-22 15:18:51.715686"], ["updated_at", "2017-12-22 15:18:51.715686"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (1.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Bitcoin"], ["symbol", "BTC"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bitcoin"], ["symbol", "BTC"], ["created_at", "2017-12-22 15:18:59.888810"], ["updated_at", "2017-12-22 15:18:59.888810"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "12633.69"], ["trans_type", "buy"], ["quantity", "0.0395767190741581"], ["paper_currency", "USD"], ["portfolio_id", 1], ["coin_id", 1], ["created_at", "2017-12-22 15:18:59.930639"], ["updated_at", "2017-12-22 15:18:59.930639"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Ethereum"], ["symbol", "ETH"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ethereum"], ["symbol", "ETH"], ["created_at", "2017-12-22 15:18:59.940403"], ["updated_at", "2017-12-22 15:18:59.940403"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "596.4"], ["trans_type", "buy"], ["quantity", "0.838363514419852"], ["paper_currency", "USD"], ["portfolio_id", 1], ["coin_id", 2], ["created_at", "2017-12-22 15:18:59.949567"], ["updated_at", "2017-12-22 15:18:59.949567"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.9ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Litecoin"], ["symbol", "LTC"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Litecoin"], ["symbol", "LTC"], ["created_at", "2017-12-22 15:18:59.958859"], ["updated_at", "2017-12-22 15:18:59.958859"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "226.84"], ["trans_type", "buy"], ["quantity", "2.20419679068947"], ["paper_currency", "USD"], ["portfolio_id", 1], ["coin_id", 3], ["created_at", "2017-12-22 15:18:59.968611"], ["updated_at", "2017-12-22 15:18:59.968611"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Monero"], ["symbol", "XMR"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Monero"], ["symbol", "XMR"], ["created_at", "2017-12-22 15:18:59.977165"], ["updated_at", "2017-12-22 15:18:59.977165"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "285.18"], ["trans_type", "buy"], ["quantity", "1.75327863104004"], ["paper_currency", "USD"], ["portfolio_id", 1], ["coin_id", 4], ["created_at", "2017-12-22 15:18:59.985781"], ["updated_at", "2017-12-22 15:18:59.985781"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "portfolios" SET "balance" = $1, "updated_at" = $2 WHERE "portfolios"."id" = $3[0m  [["balance", "8000.0"], ["updated_at", "2017-12-22 15:18:59.990482"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.6ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (22.58ms)
+Completed 200 OK in 8397ms (Views: 47.8ms | ActiveRecord: 62.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-22 10:20:23 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-22 10:20:41 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"testingtesting", "description"=>"testing testing description", "initialCoins"=>[{"coinSymbol"=>"BTC", "coinName"=>"Bitcoin", "coinPrice"=>12644.64}, {"coinSymbol"=>"ETH", "coinName"=>"Ethereum", "coinPrice"=>605.1}, {"coinSymbol"=>"LTC", "coinName"=>"Litecoin", "coinPrice"=>226.4}, {"coinSymbol"=>"NXT", "coinName"=>"Nxt", "coinPrice"=>1.09}], "user_id"=>1}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "testingtesting"], ["description", "testing testing description"], ["user_id", 1], ["created_at", "2017-12-22 15:20:41.608755"], ["updated_at", "2017-12-22 15:20:41.608755"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.8ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Bitcoin"], ["symbol", "BTC"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "12644.64"], ["trans_type", "buy"], ["quantity", "0.0395424464437105"], ["paper_currency", "USD"], ["portfolio_id", 2], ["coin_id", 1], ["created_at", "2017-12-22 15:20:50.871228"], ["updated_at", "2017-12-22 15:20:50.871228"]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Ethereum"], ["symbol", "ETH"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "605.1"], ["trans_type", "buy"], ["quantity", "0.826309700875888"], ["paper_currency", "USD"], ["portfolio_id", 2], ["coin_id", 2], ["created_at", "2017-12-22 15:20:50.895206"], ["updated_at", "2017-12-22 15:20:50.895206"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Litecoin"], ["symbol", "LTC"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "226.4"], ["trans_type", "buy"], ["quantity", "2.20848056537102"], ["paper_currency", "USD"], ["portfolio_id", 2], ["coin_id", 3], ["created_at", "2017-12-22 15:20:50.905390"], ["updated_at", "2017-12-22 15:20:50.905390"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Nxt"], ["symbol", "NXT"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "coins" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nxt"], ["symbol", "NXT"], ["created_at", "2017-12-22 15:20:50.913626"], ["updated_at", "2017-12-22 15:20:50.913626"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "1.09"], ["trans_type", "buy"], ["quantity", "458.715596330275"], ["paper_currency", "USD"], ["portfolio_id", 2], ["coin_id", 5], ["created_at", "2017-12-22 15:20:50.923165"], ["updated_at", "2017-12-22 15:20:50.923165"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "portfolios" SET "balance" = $1, "updated_at" = $2 WHERE "portfolios"."id" = $3[0m  [["balance", "8000.0"], ["updated_at", "2017-12-22 15:20:50.927562"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.4ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 2]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (7.36ms)
+Completed 200 OK in 9339ms (Views: 6.3ms | ActiveRecord: 29.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-22 10:23:37 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 61ms (Views: 21.5ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-22 10:24:28 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2017-12-22 10:24:34 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/portfolios" for 127.0.0.1 at 2017-12-22 10:24:50 -0500
+Processing by Api::V1::PortfoliosController#create as */*
+  Parameters: {"portfolio"=>{"name"=>"test name", "description"=>"test description", "initialCoins"=>[{"coinSymbol"=>"BTC", "coinName"=>"Bitcoin", "coinPrice"=>12891.3}, {"coinSymbol"=>"ETH", "coinName"=>"Ethereum", "coinPrice"=>626.66}, {"coinSymbol"=>"LTC", "coinName"=>"Litecoin", "coinPrice"=>235.17}], "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test name"], ["description", "test description"], ["user_id", 1], ["created_at", "2017-12-22 15:24:50.199653"], ["updated_at", "2017-12-22 15:24:50.199653"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Bitcoin"], ["symbol", "BTC"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "12891.3"], ["trans_type", "buy"], ["quantity", "0.0517144637597967"], ["paper_currency", "USD"], ["portfolio_id", 3], ["coin_id", 1], ["created_at", "2017-12-22 15:24:50.252321"], ["updated_at", "2017-12-22 15:24:50.252321"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Ethereum"], ["symbol", "ETH"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "626.66"], ["trans_type", "buy"], ["quantity", "1.0638411046926"], ["paper_currency", "USD"], ["portfolio_id", 3], ["coin_id", 2], ["created_at", "2017-12-22 15:24:50.261681"], ["updated_at", "2017-12-22 15:24:50.261681"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" = $1 AND "coins"."symbol" = $2 LIMIT $3[0m  [["name", "Litecoin"], ["symbol", "LTC"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["trans_price", "235.17"], ["trans_type", "buy"], ["quantity", "2.83482870547547"], ["paper_currency", "USD"], ["portfolio_id", 3], ["coin_id", 3], ["created_at", "2017-12-22 15:24:50.271152"], ["updated_at", "2017-12-22 15:24:50.271152"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "portfolios" SET "balance" = $1, "updated_at" = $2 WHERE "portfolios"."id" = $3[0m  [["balance", "8000.0"], ["updated_at", "2017-12-22 15:24:50.274593"], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.9ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 3]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (12.46ms)
+Completed 200 OK in 113ms (Views: 13.9ms | ActiveRecord: 13.2ms)
+
+

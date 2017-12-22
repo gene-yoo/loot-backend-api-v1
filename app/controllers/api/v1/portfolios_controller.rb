@@ -1,7 +1,6 @@
 class Api::V1::PortfoliosController < ApplicationController
   def create
     portfolio = Portfolio.create(name: portfolio_params[:name], description: portfolio_params[:description], user_id: portfolio_params[:user_id])
-
     if portfolio.valid?
       portfolio.balance -= 2000
       portfolio.initialCoins = portfolio_params[:initialCoins]
