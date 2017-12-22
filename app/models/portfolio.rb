@@ -23,7 +23,8 @@ class Portfolio < ApplicationRecord
         trans_type: transaction.trans_type,
         quantity: transaction.quantity,
         paper_currency: transaction.paper_currency,
-        coin_symbol: Coin.find_by(id: transaction.coin_id).symbol
+        coin_symbol: Coin.find_by(id: transaction.coin_id).symbol,
+        created_at: transaction.created_at
       }
     end
   end

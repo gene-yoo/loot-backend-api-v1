@@ -11,6 +11,10 @@ class Api::V1::PortfoliosController < ApplicationController
     end
   end
 
+  def show
+    binding.pry
+  end
+
   def update
   end
 
