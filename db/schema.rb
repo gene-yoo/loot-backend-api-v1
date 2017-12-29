@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171219153157) do
 
   create_table "portfolio_coins", force: :cascade do |t|
     t.decimal "trans_price"
+    t.decimal "trans_amt"
     t.string "trans_type"
     t.decimal "quantity"
     t.string "paper_currency"
