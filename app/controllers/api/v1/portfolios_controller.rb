@@ -12,7 +12,15 @@ class Api::V1::PortfoliosController < ApplicationController
   end
 
   def show
-    binding.pry
+    token = request.headers['token']
+    decoded = JWT.decode(token, ENV['secret'], true, { algorithm: ENV['algo'] })
+    user = User.find_by(id: decoded[0]['id'])
+
+    if user
+      render json: user.portfolios.first
+    else
+      render json: {error: 'You must be playing yoself ... '}, status: 401
+    end
   end
 
   def update
