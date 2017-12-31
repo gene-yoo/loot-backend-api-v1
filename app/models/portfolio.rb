@@ -31,4 +31,20 @@ class Portfolio < ApplicationRecord
       }
     end
   end
+
+  def net_holdings
+    holdings = {}
+
+    self.portfolio_coins.each do |trans|
+      coin_sym = Coin.find(trans.coin_id).symbol
+
+      if holdings[coin_sym]
+        trans_type === 'buy' ? holdings[coin_sym] + trans.quantity : holdings[coin_sym] - trans.quantity
+      else
+        holdings[coin_sym] = trans.quantity
+      end
+    end
+
+    holdings
+  end
 end
