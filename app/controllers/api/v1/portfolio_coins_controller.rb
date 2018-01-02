@@ -1,6 +1,5 @@
 class Api::V1::PortfolioCoinsController < ApplicationController
   def create
-    binding.pry
     portfolio = Portfolio.find_by(id: trans_params[:portfolioId])
 
     coin = Coin.find_or_create_by(name: trans_params[:coinName], symbol: trans_params[:coinSymbol])
