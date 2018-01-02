@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get '/snake', to: 'auth#snake', as: 'snake_path'
 
       get '/portfolios', to: 'portfolios#show', as: 'get_portfolios'
+
+      post '/new_transaction', to: 'portfolio_coins#create', as: 'new_transaction'
     end
   end
 end

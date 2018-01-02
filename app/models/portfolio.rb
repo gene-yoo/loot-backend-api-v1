@@ -39,7 +39,7 @@ class Portfolio < ApplicationRecord
       coin_sym = Coin.find(trans.coin_id).symbol
 
       if holdings[coin_sym]
-        trans_type === 'buy' ? holdings[coin_sym] + trans.quantity : holdings[coin_sym] - trans.quantity
+        trans.trans_type === 'buy' ? holdings[coin_sym] + trans.quantity : holdings[coin_sym] - trans.quantity
       else
         holdings[coin_sym] = trans.quantity
       end

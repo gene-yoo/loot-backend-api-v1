@@ -24,6 +24,7 @@ class Api::V1::PortfoliosController < ApplicationController
   end
 
   def update
+    binding.pry
   end
 
   def delete
