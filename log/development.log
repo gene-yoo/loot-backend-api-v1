@@ -20966,3 +20966,1032 @@ Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.8ms)
 Completed 200 OK in 46ms (Views: 33.9ms | ActiveRecord: 6.3ms)
 
 
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:26:01 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:26:01 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.8ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (1.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (10.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (49.44ms)
+Completed 200 OK in 58ms (Views: 34.5ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:26:10 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.68ms)
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:26:10 -0500
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.6ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (25.15ms)
+Completed 200 OK in 35ms (Views: 22.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:26:47 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:26:48 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.6ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (2.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (47.39ms)
+Completed 200 OK in 57ms (Views: 42.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:28:57 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:28:57 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (24.24ms)
+Completed 200 OK in 31ms (Views: 21.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:31:10 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:31:10 -0500
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (38.74ms)
+Completed 200 OK in 49ms (Views: 35.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:36:31 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:36:31 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 101ms (Views: 8.2ms | ActiveRecord: 61.7ms)
+
+
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (113.43ms)
+Completed 200 OK in 162ms (Views: 89.5ms | ActiveRecord: 48.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:36:46 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:36:46 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (22.94ms)
+Completed 200 OK in 29ms (Views: 20.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:37:41 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:37:41 -0500
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (25.95ms)
+Completed 200 OK in 34ms (Views: 22.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:37:53 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:37:53 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.7ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.8ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (26.11ms)
+Completed 200 OK in 32ms (Views: 22.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:38:04 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:38:04 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.7ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (24.69ms)
+Completed 200 OK in 32ms (Views: 21.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:38:50 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:38:50 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"portfolio"=>{}}
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.6ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (5.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (26.86ms)
+Completed 200 OK in 34ms (Views: 19.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:41:11 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:41:11 -0500
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.6ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (3.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (26.52ms)
+Completed 200 OK in 34ms (Views: 20.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:42:04 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:42:04 -0500
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.9ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (27.47ms)
+Completed 200 OK in 35ms (Views: 23.7ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:42:51 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:42:51 -0500
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.4ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (1.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (26.28ms)
+Completed 200 OK in 33ms (Views: 22.9ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:43:28 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:43:28 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (24.9ms)
+Completed 200 OK in 31ms (Views: 22.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:43:38 -0500
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:43:38 -0500
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (76.74ms)
+Completed 200 OK in 85ms (Views: 74.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:43:50 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:43:50 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (5.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (92.09ms)
+Completed 200 OK in 100ms (Views: 84.5ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:44:05 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:44:05 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.7ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (310.81ms)
+Completed 200 OK in 320ms (Views: 307.3ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:44:12 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:44:12 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.8ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (154.68ms)
+Completed 200 OK in 162ms (Views: 151.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:44:48 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:44:48 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.1ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (26.57ms)
+Completed 200 OK in 33ms (Views: 24.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:45:41 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:45:41 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.4ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.2ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (21.37ms)
+Completed 200 OK in 28ms (Views: 18.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:47:52 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:47:52 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (23.28ms)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:48:12 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:48:12 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.4ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (1.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (24.09ms)
+Completed 200 OK in 31ms (Views: 20.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:48:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:48:22 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (24.85ms)
+Completed 200 OK in 32ms (Views: 22.3ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/api/v1/new_transaction" for 127.0.0.1 at 2018-01-03 03:48:43 -0500
+Processing by Api::V1::PortfolioCoinsController#create as */*
+  Parameters: {"transaction"=>{"portfolioId"=>1, "transactionAmount"=>100, "transactionType"=>"sell", "coinSymbol"=>"BTC", "coinName"=>{"Id"=>"1182", "Url"=>"/coins/btc/overview", "ImageUrl"=>"/media/19633/btc.png", "Name"=>"BTC", "Symbol"=>"BTC", "CoinName"=>"Bitcoin", "FullName"=>"Bitcoin (BTC)", "Algorithm"=>"SHA256", "ProofType"=>"PoW", "FullyPremined"=>"0", "TotalCoinSupply"=>"21000000", "PreMinedValue"=>"N/A", "TotalCoinsFreeFloat"=>"N/A", "SortOrder"=>"1", "Sponsored"=>false}, "transactionPrice"=>15230.31}, "portfolio_coin"=>{}}
+Unpermitted parameter: :coinName
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :coinName
+Unpermitted parameter: :coinName
+  [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."name" IS NULL AND "coins"."symbol" = $1 LIMIT $2[0m  [["symbol", "BTC"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "coins" ("symbol", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["symbol", "BTC"], ["created_at", "2018-01-03 08:48:43.906566"], ["updated_at", "2018-01-03 08:48:43.906566"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: :coinName
+Unpermitted parameter: :coinName
+Unpermitted parameter: :coinName
+Unpermitted parameter: :coinName
+Unpermitted parameter: :coinName
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "portfolio_coins" ("trans_price", "trans_amt", "trans_type", "quantity", "paper_currency", "portfolio_id", "coin_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["trans_price", "15230.31"], ["trans_amt", "100.0"], ["trans_type", "sell"], ["quantity", "0.00656585453611909"], ["paper_currency", "USD"], ["portfolio_id", 1], ["coin_id", 9], ["created_at", "2018-01-03 08:48:56.487783"], ["updated_at", "2018-01-03 08:48:56.487783"]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: :coinName
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "portfolios" SET "balance" = $1, "updated_at" = $2 WHERE "portfolios"."id" = $3[0m  [["balance", "2100.0"], ["updated_at", "2018-01-03 08:48:56.511722"], ["id", 1]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (25.46ms)
+Completed 200 OK in 12650ms (Views: 22.9ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:50:06 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:50:06 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.5ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (1.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (2.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (43.56ms)
+Completed 200 OK in 51ms (Views: 38.1ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:50:42 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:50:42 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"portfolio"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.8ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.7ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.6ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.7ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.9ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (31.44ms)
+Completed 200 OK in 40ms (Views: 27.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/current_user" for 127.0.0.1 at 2018-01-03 03:51:23 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/portfolios" for 127.0.0.1 at 2018-01-03 03:51:23 -0500
+Processing by Api::V1::PortfoliosController#show as */*
+  Parameters: {"portfolio"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT  "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 ORDER BY "portfolios"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mPortfolioCoin Load (0.9ms)[0m  [1m[34mSELECT "portfolio_coins".* FROM "portfolio_coins" WHERE "portfolio_coins"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (3.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.3ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.4ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCoin Load (0.5ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Coin Load (0.0ms)[0m  [1m[34mSELECT  "coins".* FROM "coins" WHERE "coins"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered PortfolioSerializer with ActiveModelSerializers::Adapter::Attributes (31.8ms)
+Completed 200 OK in 39ms (Views: 25.4ms | ActiveRecord: 9.0ms)
+
+
