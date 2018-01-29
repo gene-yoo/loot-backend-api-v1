@@ -1,24 +1,9 @@
-# README
+# README for Loot Project - Backend API
+### Author: Gene Yoo
+### Contact: gene.y.yoo@gmail.com
+### Github: <a href="https://github.com/gene-yoo">https://github.com/gene-yoo</a>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Description
+Loot is a cryptocurrency trading platform simulator built on React / Redux / Rails. Market prices are sourced every 30 seconds from the [CryptoCompare API](https://www.cryptocompare.com/api). Charts are built on [Chart.js](http://www.chartjs.org/).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Loot Demo](https://github.com/gene-yoo/loot-demo)
